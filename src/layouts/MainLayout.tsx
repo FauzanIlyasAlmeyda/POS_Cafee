@@ -1,5 +1,5 @@
-import Navbar from "../components/navbar";
 import type { ReactNode } from "react";
+import Navbar from "../components/navbar";
 
 export default function MainLayout({
   children,
@@ -7,9 +7,11 @@ export default function MainLayout({
   children: ReactNode;
 }) {
   return (
-    <div className="min-h-screen bg-gray-100">
+    <div className="h-screen flex flex-col overflow-hidden bg-gray-100">
       <Navbar />
-      <main className="p-6">{children}</main>
+      <main className="flex-1 overflow-hidden">
+        {children}
+      </main>
     </div>
   );
 }
